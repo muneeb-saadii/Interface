@@ -20,6 +20,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        edtUsername = findViewById(R.id.login_edt_username);
         btnSignin = findViewById(R.id.btn_signin);
         btnSignup = findViewById(R.id.btn_signup);
 
@@ -35,21 +36,29 @@ public class SignInActivity extends AppCompatActivity {
 
             int i = view.getId();
 
-            if(i == R.id.btn_signin){
+            check(i);
+    }
+}
+
+    private void check(int i) {
+
+        if(i == R.id.btn_signin){
 
 //                if(signin_validation()){
 //                    if(signin_auth()){
-                        Intent iHome = new Intent(SignInActivity.this, HomeActivity.class);
-                        startActivity(iHome);
-                        finishAffinity();
+            i = 20;
+            Intent iHome = new Intent(SignInActivity.this, HomeActivity.class);
+            startActivity(iHome);
+            finishAffinity();
 //                    }
 //                }
-            } else if(i == R.id.btn_signup){
+        } else if(i == R.id.btn_signup){
 
-                Intent iRegister = new Intent(SignInActivity.this, SignUpActivity.class);
-                startActivity(iRegister);
-                finish();
-            }
+            i = 50;
+
+            Intent iRegister = new Intent(SignInActivity.this, SignUpActivity.class);
+            startActivity(iRegister);
+            finish();
         }
     }
-}
+    }

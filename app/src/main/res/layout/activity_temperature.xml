@@ -6,111 +6,243 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical"
-android:gravity="center_horizontal"
-tools:context=".activities.TemperatureActivity">
+tools:context=".activities.TemperatureActivity"
+    android:background="@color/black">
 
-<RelativeLayout
-    android:id="@+id/progress_layout"
-    android:layout_width="200dp"
-    android:layout_height="200dp"
-    android:layout_marginVertical="50dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--progress bar implementation-->
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        style="?android:attr/progressBarStyleHorizontal"
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:indeterminate="false"
-        android:backgroundTint="@color/green_500"
-        android:background="@drawable/design_ring_shape"
-        android:progressDrawable="@drawable/home_circular_progressbar"
-        android:max="60"
-        android:min="10"
-        android:textAlignment="center" />
-    <!--Text implementation in center of the progress bar-->
-    <TextView
-        android:id="@+id/progress_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:text="Running"
-        android:textColor="@color/black"
-        android:textSize="28sp" />
-</RelativeLayout>
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
-    <RelativeLayout
-        android:id="@+id/progress_layout1"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp">
+        android:orientation="vertical"
+        >
 
-        <!--progress bar implementation-->
-        <ProgressBar
-            android:id="@+id/temp_progress_bar"
-            style="?android:attr/progressBarStyleHorizontal"
+        <LinearLayout
+            android:id="@+id/design_txtViews"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:indeterminate="false"
-            android:background="@drawable/design_circular_shape"
-            android:progressDrawable="@drawable/home_circular_progressbar"
-            android:max="60"
-            android:min="10"
-            android:textAlignment="center" />
-        <!--Text implementation in center of the progress bar-->
-        <TextView
-            android:id="@+id/temp_progress_text"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginVertical="40dp"
+            android:orientation="vertical"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temperature"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="in your Living Room.."
+                android:textSize="22sp"
+                android:textColor="@color/dull_white"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginVertical="30dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentStart="true"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/sensor_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="26°C"
+                    android:textSize="35sp"
+                    android:textColor="@color/white"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperature"
+                    android:textSize="22sp"
+                    android:textColor="@color/dull_white"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_alignParentEnd="true"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/sensor_humid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="65%"
+                    android:textSize="35sp"
+                    android:textColor="@color/white"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Humidity"
+                    android:textSize="22sp"
+                    android:textColor="@color/dull_white"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/progress_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="40dp">
+
+            <!--progress bar implementation-->
+            <ProgressBar
+                android:id="@+id/temp_progress_bar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:indeterminate="false"
+                android:background="@drawable/design_circular_shape"
+                android:progressDrawable="@drawable/home_circular_progressbar"
+                android:max="60"
+                android:min="10"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"/>
+            <!--Text implementation in center of the progress bar-->
+            <TextView
+                android:id="@+id/temp_progress_text"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAlignment="center"
+                android:text="---"
+                android:textColor="@color/black"
+                android:textSize="22sp"/>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="---"
-            android:textColor="@color/black"
-            android:textSize="22sp"/>
+            >
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outside Weather"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="20dp"
+                />
+            <ImageView
+                android:id="@+id/weather_img"
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                />
+        </LinearLayout>
 
-
-    </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/progress_layout2"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_margin="10dp">
-
-        <!--progress bar implementation-->
-        <ProgressBar
-            android:id="@+id/humid_progress_bar"
-            style="?android:attr/progressBarStyleHorizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:indeterminate="false"
-            android:background="@drawable/design_circular_shape"
-            android:progressDrawable="@drawable/home_circular_progressbar"
-            android:progressTint="@color/blue_700"
-            android:max="100"
-            android:min="0"
-            android:textAlignment="center" />
-        <!--Text implementation in center of the progress bar-->
-        <TextView
-            android:id="@+id/humid_progress_text"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:text="---"
-            android:textColor="@color/black"
-            android:textSize="22sp"/>
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="30dp"
+            >
+            <LinearLayout
+                android:id="@+id/design_weather_attrbts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="20dp"
+                android:layout_alignParentStart="true"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feels like"
+                    android:textSize="22sp"
+                    android:textColor="@color/dull_white"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textSize="22sp"
+                    android:textColor="@color/dull_white"
+                    android:layout_marginVertical="15dp"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textSize="22sp"
+                    android:textColor="@color/dull_white"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="20dp"
+                android:layout_alignParentEnd="true"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/weather_feels_degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30°C"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dull_white"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/weather_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dull_white"
+                    android:layout_marginVertical="15dp"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/weather_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dull_white"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

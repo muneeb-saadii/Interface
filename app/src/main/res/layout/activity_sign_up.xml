@@ -22,9 +22,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-        <include
+        <EditText
             android:id="@+id/edt_name"
-            layout="@layout/credential_edit_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAEA"
+            android:textSize="25sp"
+            android:hint="Please fill this field"
+            android:padding="8dp"
             />
     </LinearLayout>
 
@@ -32,9 +37,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-        <include
-            android:id="@+id/edt_username"
-            layout="@layout/credential_edit_box"
+        <EditText
+            android:id="@+id/edt_usernam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAEA"
+            android:textSize="25sp"
+            android:hint="Please fill this field"
+            android:padding="8dp"
             />
     </LinearLayout>
 
@@ -42,19 +52,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-        <include
-            android:id="@+id/edt_password"
-            layout="@layout/credential_edit_box"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp">
-        <include
+        <EditText
             android:id="@+id/edt_contact"
-            layout="@layout/credential_edit_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAEA"
+            android:textSize="25sp"
+            android:hint="Please fill this field"
+            android:padding="8dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <EditText
+            android:id="@+id/edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAEA"
+            android:textSize="25sp"
+            android:hint="Please fill this field"
+            android:padding="8dp"
+            android:inputType="textPassword"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <EditText
+            android:id="@+id/edt_confirm_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EAEAEA"
+            android:textSize="25sp"
+            android:hint="Please fill this field"
+            android:padding="8dp"
+            android:inputType="textPassword"
             />
     </LinearLayout>
 
